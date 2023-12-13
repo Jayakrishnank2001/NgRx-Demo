@@ -3,9 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <h1>Welcome to {{title}}!</h1>
-
+    <app-top-nav></app-top-nav>
+    <div class="container">
     <router-outlet></router-outlet>
+    </div>
   `,
   styles: []
 })
