@@ -7,8 +7,8 @@ import * as ProductActions from '../../state/product/product.actions'
 @Component({
   selector: 'app-product',
   template: `
-  <button class="btn btn-primary py-3" (click)="addProduct()">Add</button>
-  <<ng-container *ngIf="products$|async as products">
+  <button class="btn btn-primary my-3" (click)="addProduct()">Add</button>
+  <ng-container *ngIf="products$|async as products">
     <div class="py-3">
        <table class="table table-stripped">
         <thead>

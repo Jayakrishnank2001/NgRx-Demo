@@ -9,18 +9,26 @@ import { CounterComponent } from './components/counter/counter.component';
 import { TopNavComponent } from './components/layouts/top-nav/top-nav.component';
 import { ProductComponent } from './components/product/product.component';
 import { productReducer } from './state/product/product.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { UsersComponent } from './components/users/users.component';
+import { HttpClientModule } from '@angular/common/http';
+import { userReducer } from './state/user/user.reducer';
+import { UserEffects } from './state/user/user.effects';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
     TopNavComponent,
-    ProductComponent
+    ProductComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({counter:CounterReducer,products:productReducer})
+    HttpClientModule,
+    StoreModule.forRoot({counter:CounterReducer,products:productReducer,userState:userReducer}),
+    EffectsModule.forRoot([UserEffects])
   ],
   providers: [
     provideClientHydration()
